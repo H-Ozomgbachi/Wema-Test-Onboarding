@@ -1,4 +1,6 @@
-﻿namespace Onboarding.Infrastructure.DTOs.Payloads.Validators
+﻿using Onboarding.Infrastructure.Migrations;
+
+namespace Onboarding.Infrastructure.DTOs.Payloads.Validators
 {
     public class InitiateCustomerOnboardingPayloadValidator : AbstractValidator<InitiateCustomerOnboardingPayload>
     {
@@ -33,7 +35,8 @@
 
         private bool ValidateLga(string stateOfResidence, string lga)
         {
-            string[] lgas = _config.GetSection($"StatesAndLga:{stateOfResidence}").Get<string[]>();
+            bool doesStateExist = _config.GetSection("StatesAndLga").GetSection(stateOfResidence).Exists();
+            string[] lgas = doesStateExist ? _config.GetSection($"StatesAndLga:{stateOfResidence}").Get<string[]>() : Array.Empty<string>();
 
             return lgas.Contains(lga);
         }

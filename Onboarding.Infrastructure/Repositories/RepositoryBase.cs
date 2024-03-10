@@ -11,6 +11,8 @@
 
         public void Create(T entity) => _context.Set<T>().Add(entity);
 
+        public async Task<bool> Exists(Expression<Func<T, bool>> predicate, CancellationToken cancellation) => await _context.Set<T>().AnyAsync(predicate, cancellation);
+
         public async Task<IEnumerable<T>> GetAll(CancellationToken cancellation) => await _context.Set<T>().AsNoTracking().ToListAsync(cancellation);
     }
 }

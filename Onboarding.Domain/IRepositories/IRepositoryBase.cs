@@ -4,5 +4,6 @@
     {
         Task<IEnumerable<T>> GetAll(CancellationToken cancellation);
         void Create(T entity);
+        Task<bool> Exists(Expression<Func<T, bool>> predicate, CancellationToken cancellation);
     }
 }

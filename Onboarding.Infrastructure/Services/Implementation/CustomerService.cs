@@ -107,6 +107,13 @@
             customer.Password = passwordHash;
             customer.SecurityStamp = securityStamp;
 
+            bool isOnboarded = await _unitWork.CustomerRepository.Exists(c => c.PhoneNumber == customer.PhoneNumber || c.Email == customer.Email, cancellationToken);
+
+            if (isOnboarded)
+            {
+                throw new BadRequestException("This customer has already been onboarded");
+            }
+
             _unitWork.CustomerRepository.Create(customer);
 
             await _unitWork.SaveChanges(cancellationToken);

@@ -6,7 +6,7 @@
         {
         }
 
-        public BadRequestException(string message) : base(HttpStatusCode.BadRequest)
+        public BadRequestException(string message) : base(HttpStatusCode.BadRequest, message)
         {
         }
     }

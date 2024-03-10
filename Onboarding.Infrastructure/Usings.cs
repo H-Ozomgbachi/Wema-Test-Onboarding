@@ -18,3 +18,4 @@ global using Microsoft.Extensions.Options;
 global using Onboarding.Shared.Helpers;
 global using Onboarding.Shared.Exceptions;
 global using Microsoft.Extensions.Configuration;
+global using System.Linq.Expressions;

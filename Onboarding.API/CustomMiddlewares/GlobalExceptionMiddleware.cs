@@ -41,7 +41,7 @@
 
                 response.ResponseCode = code;
                 response.ResponseMessage = message;
-                response.ResponseData = baseException?.Message ?? ResponseMessages.InternalServer;
+                response.ResponseData = baseException.Message ?? ResponseMessages.InternalServer;
             }
             else
             {
