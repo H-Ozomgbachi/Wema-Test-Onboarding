@@ -10,4 +10,4 @@ A local Redis Server was used for caching, (please modify the redis url on 'apps
 
 To mock the OTP sending feature, I utilised RabbitMQ event publisher and a consumer console that simulates a cell phone and displays the generated OTP. (please modify RabbitMQ credentials on 'appsettings.Development.json' to your valid credentials before running)
 
-The database utilised is Microsoft SQL Server.
+The database utilised is Microsoft SQL Server. (please modify the DbConnection string on 'appsettings.Development.json' to your valid connection before running. Also ensure to do an EF Core migration database update before running)
