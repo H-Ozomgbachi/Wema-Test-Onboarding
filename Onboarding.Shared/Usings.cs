@@ -1,0 +1,15 @@
+﻿global using System.Net;
+global using Onboarding.Shared.Constants;
+global using System.Security.Cryptography;
+global using System.Text;
+global using MassTransit;
+global using Onboarding.Shared.Models;
+global using Newtonsoft.Json;
+global using Newtonsoft.Json.Serialization;
+global using Microsoft.Extensions.Configuration;
+global using StackExchange.Redis;
+global using Microsoft.Extensions.Logging;
+global using Onboarding.Shared.Helpers;
+global using RestSharp.Authenticators;
+global using RestSharp;
+global using Microsoft.Extensions.Options;
